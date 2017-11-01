@@ -1,22 +1,63 @@
 package br.unincor.model;
 
 /**
- * Implementar relacionamento de herança
- * com a classe "Produto"
+ * Implementar relacionamento de herança com a classe "Produto"
  *
  */
-public class Sanduiche {
-	
-	private Boolean trio; //Define se adiciona batata e refrigerante - sem validação
-	private Boolean dobroRecheio; //Define se terá o dobro de recheio - sem validação
-	
-	/** Criar um construtor que recebe todos os atributos como parâmetro **/
+public class Sanduiche extends Produto {
 
-	/** Criar getters e setters **/
+	private Boolean trio; // Define se adiciona batata e refrigerante - sem
+	// validação
+	private Boolean dobroRecheio; // Define se terá o dobro de recheio - sem
+	// validação
 
-	/** Implementar para mostrar os valores de todos os atributos **/
-	public String verDados() {
-		return "";
+	/**
+	 * Criar um construtor que recebe todos os atributos como parâmetro
+	 *
+	 *
+	 * @param nome
+	 * @param preco
+	 * @param trio
+	 * @param dobroRecheio
+	 */
+	public Sanduiche(String nome, Double preco, Boolean trio, Boolean dobroRecheio) {
+		super(nome, preco);
+		this.trio = trio;
+		this.dobroRecheio = dobroRecheio;
 	}
-	
+
+	/**
+	 * Criar getters e setters
+	 *
+	 *
+	 * @return
+	 */
+	public Boolean getTrio() {
+		return trio;
+	}
+
+	public void setTrio(Boolean trio) {
+		this.trio = trio;
+	}
+
+	public Boolean getDobroRecheio() {
+		return dobroRecheio;
+	}
+
+	public void setDobroRecheio(Boolean dobroRecheio) {
+		this.dobroRecheio = dobroRecheio;
+	}
+
+	/**
+	 * Implementar para mostrar os valores de todos os atributos
+	 *
+	 *
+	 * @return
+	 */
+	@Override
+	public String verDados() {
+		return "--SANDUÍCHE--\n" + super.verDados() + "\nTrio = " + this.trio + "\nDobro de recheio = "
+				+ this.dobroRecheio;
+	}
+
 }
